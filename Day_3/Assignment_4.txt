@@ -1,0 +1,33 @@
+show databases;
+
+use company;
+
+show tables;
+
+select * from customers;
+select * from orders;
+select * from salespeople;
+
+-- 1
+SELECT * FROM ORDERS
+ORDER BY ONUM,AMT,ODATE;
+
+-- 2
+SELECT * FROM CUSTOMERS
+WHERE SNUM = 1001;
+
+-- 3
+SELECT CITY,SNAME,SNUM,COMM
+FROM SALESPEOPLE;
+
+-- 4 
+SELECT RATING,CNAME
+FROM CUSTOMERS
+WHERE CITY="SAN JOSE";
+
+-- 5
+SELECT DISTINCT SNUM
+FROM ORDERS;
+
+
+

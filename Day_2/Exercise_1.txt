@@ -1,0 +1,153 @@
+show databases;
+create database exercise_1;
+
+use exercise_1;
+
+-- 1)
+create table SEMP
+(EMPNO CHAR(4),
+ EMPNAME CHAR(20),
+ BASIC FLOAT(9,2),
+ DEPTNO CHAR(2),
+ DEPTHEAD CHAR(4)
+);
+
+-- 2)
+create table SDEPT
+(DEPTNO CHAR(2),
+ DEPTNAME CHAR(15)
+);
+
+-- 3)
+INSERT INTO SDEPT(DEPTNO,DEPTNAME)
+VALUES('10','Development');
+INSERT INTO SDEPT(DEPTNO,DEPTNAME)
+VALUES('20','Training');
+
+-- 4)
+INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+VALUES('0001','SUNIL','6000','10',NULL);
+INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+VALUES('0002','HIREN','8000','20',NULL);
+INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+VALUES('0003','ALI','4000','10',0001);
+INSERT INTO SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+VALUES('0004','GEORGE','6000',NULL,'0002');
+
+SELECT * FROM SDEPT;
+SELECT * FROM SEMP;
+
+
+create table S
+(
+ `S#` CHAR(2),
+ Sname VARCHAR(10),
+ status int(2),
+ City varchar(10)
+);
+
+insert into s(`S#`,Sname,status,City)
+values('S1','Sid',10,'London');
+insert into s(`S#`,Sname,status,City)
+values('S2','San',20,'Paris');
+insert into s(`S#`,Sname,status,City)
+values('S3','rutu',30,'Athens');
+insert into s(`S#`,Sname,status,City)
+values('S4','Ash',40,'London');
+insert into s(`S#`,Sname,status,City)
+values('S3','Sandy',50,'Paris');
+
+
+
+create table P
+(
+ `P#` CHAR(2),
+ PNAME VARCHAR(15),
+ COLOR VARCHAR(10),
+ WEIGHT FLOAT(4,2),
+ CITY VARCHAR(10)
+);
+
+DROP TABLE p;
+insert into P(`P#`,Pname,COLOR,WEIGHT,City)
+values('P1','Cabinet','BLACK','8.32','London');
+insert into P(`P#`,Pname,COLOR,WEIGHT,City)
+values('P2','Printer','WHITE','12.4','Athens');
+insert into P(`P#`,Pname,COLOR,WEIGHT,City)
+values('P3','Table','BROWN','11.09','Paris');
+insert into P(`P#`,Pname,COLOR,WEIGHT,City)
+values('P4','Refrigerator','WHITE','8.32','Paris');
+insert into P(`P#`,Pname,COLOR,WEIGHT,City)
+values('P5','Trademill','BLACK','18.96','Athens');
+
+
+
+CREATE TABLE J
+( `J#` CHAR(2),
+  JNAME VARCHAR(10),
+  CITY VARCHAR(10)
+);
+
+insert into j values('J1','Java','Paris');
+insert into j values('J2','C++','Athens');
+insert into j values('J3','DataBase','London');
+insert into j values('J4','IOT','Paris');
+insert into j values('J5','AUTOMATION','London');
+
+
+CREATE TABLE SPJ
+(
+ `S#` CHAR(2),
+ `P#` CHAR(2),
+ `J#` CHAR(2),
+ QTY FLOAT(7,2)
+);
+
+-- 5
+select * from s;
+
+-- 6
+select `S#`,Sname from S;
+    
+-- 7    
+select Pname,Color from P where City='London';
+    
+-- 8     
+select * from S where City='London';
+ 
+ -- 9
+select * from S where City='Paris' or City= 'Athens';
+
+-- 10
+select * from J where City='Athens';
+     
+-- 11    
+select * from P where Weight between 12 and 14;
+
+-- 12
+select Sname from S where Status >=20;
+
+-- 13
+select Sname from S where City <>'London';
+
+-- 14
+select City from S;
+
+-- 15
+select * from P where Weight*1000;
+
+select * from P where Weight*0.001;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+SELECT * FROM ORDERS;
+SELECT * FROM SALESPEOPLE;
+SELECT * FROM CUSTOMERS;
+
+-- 1
+SELECT * FROM ORDERS
+WHERE AMT >1000;
+
+-- 2
+SELECT SNAME,CITY
+FROM SALESPEOPLE
+WHERE CITY="London" AND COMM >.10;
+
+-- 3 
+SELECT * FROM CUSTOMERS
+WHERE RATING > 100 AND CITY != "ROME";
+
+-- 4
+Select * from Orders
+where (amt < 1000 OR
+NOT (odate = "1990-10-03"
+AND cnum > 2003));
+
+-- 5
+Select * from Orders
+where NOT ((odate = "1990-10-03" OR snum
+>1006) AND amt >= 1500);
+
+-- 6
+Select snum, sname, city, comm 
+From Salespeople 
+where (comm > .12 OR comm <.14);
+
