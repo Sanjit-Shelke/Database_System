@@ -1,0 +1,32 @@
+use company;
+
+show tables;
+
+select * from customers;
+select * from orders;
+select * from salespeople;
+
+
+-- 1
+select * from orders
+where odate="1990-10-03" or odate="1990-10-04";
+
+select * from orders
+where odate in ("1990-10-03","1990-10-04");
+
+-- 2
+select * from customers
+where snum=1001 or snum=1004;
+
+
+-- 3
+select * from customers
+where cname >= "A" and  cname <="H";
+
+-- 4
+select * from customers
+where cname like "C%";
+
+-- 5
+select * from orders
+where Amt != 0 OR AMT IS NOT NULL;
