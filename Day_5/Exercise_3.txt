@@ -1,0 +1,35 @@
+-- 1
+select sname from s
+where ascii(upper(substr(sname,1,1)))=ascii(sname);
+
+
+-- 2
+select upper(sname) from s;
+
+-- 3 
+select lower(sname) from s;
+
+-- 4
+
+select lpad(sname,25,' ') from s;
+
+-- 5
+
+select replace(sname,'la','ro') from s;
+
+
+-- 6
+select (replace(sname,'l','r'),'a','o') from s;
+
+
+-- 7
+select length(sname) from s;
+
+-- 8
+select * from s
+where soundex(sname)=soundex('sidd');
+
+-- 9
+
+-- 10
+select dayname(curdate());
