@@ -1,0 +1,39 @@
+-- 1
+select min(status) from s;
+
+-- 2
+select max(weight) from p;
+
+-- 3
+select avg(weight) from p;
+
+-- 4
+select sum(qty) from spj
+where `P#`= 'P1';
+
+-- 5
+SELECT DISTINCT `P#`,((SUM(QTY))) FROM SPJ GROUP BY `P#`;
+
+-- 6
+SELECT DISTINCT `P#`, (AVG(QTY)) FROM SPJ
+GROUP BY `P#`;
+
+-- 7 
+SELECT 'P#', (MAX(QTY)>800) FROM SPJ GROUP BY 'P#';
+-- 8
+SELECT STATUS, COUNT(SNAME) FROM S GROUP BY STATUS;
+
+-- 9
+SELECT DISTINCT(CITY),COUNT(JNAME) FROM J GROUP BY CITY;
+
+-- 10
+SELECT COUNT(STATUS) FROM S;
+SELECT COUNT(*) FROM S;
+
+-- 11
+SELECT  CASE
+WHEN STATUS = 10 THEN 'Ten'
+WHEN STATUS = 20 THEN 'Twenty'
+WHEN STATUS = 30 THEN 'Thirty'
+end as status,count('S#') "COUNT"
+FROM S GROUP BY STATUS; 
