@@ -1,0 +1,14 @@
+-- 1
+select orders.onum, customers.cname from orders,customers;
+
+-- 2
+select salespeople.sname,customers.cname,orders.onum from orders,salespeople,customers; 
+
+-- 3
+select customers.cname, salespeople.sname, salespeople.comm from customers, salespeople 
+where customers.snum=salespeople.snum and salespeople.comm>0.12;
+ 
+
+-- 4
+select salespeople.comm, orders.amt, (salespeople.comm*orders.amt) as commision, customers.rating,customers.cname from salespeople, orders, customers
+where orders.snum=salespeople.snum and orders.cnum=customers.cnum and customers.rating>100; 
